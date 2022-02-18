@@ -75,7 +75,7 @@ public class Combinator {
         return this.combinations;
     }
 
-    public void subsetGenerator(Object[] arr, int k, int start, Object[] result) {
+    private void subsetGenerator(Object[] arr, int k, int start, Object[] result) {
         if (k == 0) {
             this.combinations.add(Arrays.copyOf(result, result.length));
             return;
