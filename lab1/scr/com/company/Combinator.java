@@ -55,17 +55,20 @@ public class Combinator {
     }
 
     public ArrayList<Object> generateSubsets() {
+        this.combinations.clear();
         subsetGenerator(this.elements, k, 0, new Object[k]);
         return this.combinations;
     }
 
     public ArrayList<Object> generateSubsets(int k) {
+        this.combinations.clear();
         setK(k);
         subsetGenerator(this.elements, k, 0, new Object[k]);
         return this.combinations;
     }
 
     public ArrayList<Object> generateSubsets(int N, int k) {
+        this.combinations.clear();
         setElements(N);
         setK(k);
         this.subsetGenerator(this.elements, k, 0, new Object[k]);
