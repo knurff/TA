@@ -13,7 +13,14 @@ public class ArraysUtil {
     }
 
     public static void fillArrayWithConsistentValues(int[] arr) {
-        IntStream.range(0, arr.length)
-                .forEach(i -> arr[i] = i + 1);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
+    }
+
+    public static void fillArrayWithReverseValues(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = arr.length - i;
+        }
     }
 }
