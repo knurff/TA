@@ -117,7 +117,7 @@ public class Timer {
             Stopwatch timerSingly = Stopwatch.createStarted();
             TimerHelper.indexing(singlyLinkedList, searchValueSingly, n);
             timerSingly.stop();
-            result.append(" Doubly linked list: ").append(timerSingly);
+            result.append(" Singly linked list: ").append(timerSingly);
         }
         return result.toString();
     }
