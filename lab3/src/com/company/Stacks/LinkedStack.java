@@ -29,4 +29,9 @@ public class LinkedStack<T> implements Stack<T> {
     public boolean isEmpty() {
         return doublyLinkedList.isEmpty();
     }
+
+    @Override
+    public String toString() {
+        return doublyLinkedList.toString().replaceFirst("Doubly linked list: ", "Stack: ");
+    }
 }

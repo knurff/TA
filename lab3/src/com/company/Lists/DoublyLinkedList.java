@@ -23,7 +23,7 @@ public class DoublyLinkedList<T> implements List<T> {
     private Node<T> first;
     private Node<T> last;
     private int size;
-    //done
+
     @SafeVarargs
     public static <T> DoublyLinkedList<T> of(T... elements) {
         DoublyLinkedList<T> doublyLinkedList = new DoublyLinkedList<>();
@@ -53,20 +53,6 @@ public class DoublyLinkedList<T> implements List<T> {
         size++;
     }
 
-    private void addAsTail(Node<T> newNode) {
-        last.next = newNode;
-        newNode.previous = last;
-        last = newNode;
-    }
-
-    private void add(int index, Node<T> newNode) {
-        Node<T> node = findNodeByIndex(index - 1);
-        newNode.next = node.next;
-        newNode.next.previous = newNode;
-        node.next = newNode;
-        newNode.previous = node;
-    }
-
     @Override
     public void set(int index, T element) {
         Node<T> node = findNodeByIndex(index);
@@ -86,14 +72,6 @@ public class DoublyLinkedList<T> implements List<T> {
         } else {
             return nodeAt(index);
         }
-    }
-
-    private Node<T> nodeAt(int index) {
-        Node<T> currentNode = first;
-        for (int i = 0; i < index; i++) {
-            currentNode = currentNode.next;
-        }
-        return currentNode;
     }
 
     @Override
@@ -124,18 +102,6 @@ public class DoublyLinkedList<T> implements List<T> {
         }
         size--;
         return deletedElement;
-    }
-
-    private void removeTail() {
-        last = last.previous;
-        if (last == null) first = null;
-        else last.next = null;
-    }
-
-    private void removeHead() {
-        first = first.next;
-        if (first == null) last = null;
-        else first.previous = null;
     }
 
     @Override
@@ -176,6 +142,20 @@ public class DoublyLinkedList<T> implements List<T> {
         size = 0;
     }
 
+    private void addAsTail(Node<T> newNode) {
+        last.next = newNode;
+        newNode.previous = last;
+        last = newNode;
+    }
+
+    private void add(int index, Node<T> newNode) {
+        Node<T> node = findNodeByIndex(index - 1);
+        newNode.next = node.next;
+        newNode.next.previous = newNode;
+        node.next = newNode;
+        newNode.previous = node;
+    }
+
     private void addAsHead(Node<T> newNode) {
         newNode.next = first;
         newNode.previous = null;
@@ -183,11 +163,31 @@ public class DoublyLinkedList<T> implements List<T> {
         first = newNode;
         if (first.next == null) last = first;
     }
-    //done
+
+    private void removeTail() {
+        last = last.previous;
+        if (last == null) first = null;
+        else last.next = null;
+    }
+
+    private void removeHead() {
+        first = first.next;
+        if (first == null) last = null;
+        else first.previous = null;
+    }
+
     private void checkElementsExist() {
         if (first == null) {
             throw new NoSuchElementException();
         }
+    }
+
+    private Node<T> nodeAt(int index) {
+        Node<T> currentNode = first;
+        for (int i = 0; i < index; i++) {
+            currentNode = currentNode.next;
+        }
+        return currentNode;
     }
 
     @Override

@@ -1,9 +1,9 @@
-package com.company.Utils.ElementsGenerator;
+package com.company.Utils.TimerHelper;
 
 import com.company.Lists.List;
 
 
-public class ElementsGenerator {
+public class TimerHelper {
     public static void fillListFront(List<Integer> list, int n) {
         while (n > 0) {
             list.add(0, (int) Math.round((Math.random() * 40) - 20));

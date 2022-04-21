@@ -29,4 +29,9 @@ public class LinkedQueue<T> implements Queue<T> {
     public boolean isEmpty() {
         return singlyLinkedList.isEmpty();
     }
+
+    @Override
+    public String toString() {
+        return singlyLinkedList.toString().replaceFirst("Singly linked list: ", "Queue: ");
+    }
 }
