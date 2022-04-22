@@ -7,7 +7,12 @@ import com.company.Utils.TimerHelper.TimerHelper;
 import com.google.common.base.Stopwatch;
 
 public class Timer {
-    public static String getResult(int n){
+
+    private Timer() {
+        throw new AssertionError();
+    }
+
+    public static String getResult(int n) {
         insertAndDeleteFront(n);
         insertAndDeleteEnd(n);
         insertAndDeleteAGN(n);
@@ -109,7 +114,7 @@ public class Timer {
         List<Integer> singlyLinkedList = new SinglyLinkedList<>();
         TimerHelper.fillListFront(singlyLinkedList, n);
         int searchValueSingly = TimerHelper.indexingPrepare(doublyLinkedList, singlyLinkedList);
-        if (searchValueSingly != Integer.MIN_VALUE){
+        if (searchValueSingly != Integer.MIN_VALUE) {
             Stopwatch timerDoubly = Stopwatch.createStarted();
             TimerHelper.indexing(doublyLinkedList, searchValueSingly, n);
             timerDoubly.stop();

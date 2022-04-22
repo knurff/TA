@@ -4,6 +4,12 @@ import com.company.Lists.List;
 
 
 public class TimerHelper {
+
+    private TimerHelper() {
+        throw new AssertionError();
+    }
+
+
     public static void fillListFront(List<Integer> list, int n) {
         while (n > 0) {
             list.add(0, (int) Math.round((Math.random() * 40) - 20));
@@ -42,9 +48,9 @@ public class TimerHelper {
     }
 
     public static int indexingPrepare(List<Integer> list1, List<Integer> list2) {
-        int searchValue = (int) Math.round((Math.random()*70) + 30);
+        int searchValue = (int) Math.round((Math.random() * 70) + 30);
         if (!list1.contains(searchValue) && !list2.contains(searchValue)) {
-            int index = (int) Math.round(Math.random()*(list1.size()));
+            int index = (int) Math.round(Math.random() * (list1.size()));
             list1.add(index, searchValue);
             list2.add(index, searchValue);
             return searchValue;
