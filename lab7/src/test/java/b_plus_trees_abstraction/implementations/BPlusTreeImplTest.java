@@ -1,5 +1,6 @@
 package b_plus_trees_abstraction.implementations;
 
+import b_plus_trees_abstraction.BPlusTree;
 import com.google.common.base.Stopwatch;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ class BPlusTreeImplTest {
     @Test
     @Order(1)
     void insertTimeComplexityTest() {
-        BPlusTreeImpl<Integer, Integer> bTree = new BPlusTreeImpl<>();
+        BPlusTree<Integer, Integer> bTree = new BPlusTreeImpl<>();
         int limit = 10_000;
         Stopwatch stopwatchR = Stopwatch.createStarted();
         for (int i = 0; i < limit; i++) {
@@ -34,7 +35,7 @@ class BPlusTreeImplTest {
     @Test
     @Order(2)
     void deleteTimeComplexityTest() {
-        BPlusTreeImpl<Integer, Integer> bTree = new BPlusTreeImpl<>();
+        BPlusTree<Integer, Integer> bTree = new BPlusTreeImpl<>();
         List<Integer> tempList = new ArrayList<>();
         int limit = 10_000;
         for (int i = 0; i < limit; i++) {
@@ -65,7 +66,7 @@ class BPlusTreeImplTest {
     @Test
     @Order(3)
     void containsTimeComplexityTest() {
-        BPlusTreeImpl<Integer, Integer> bTree = new BPlusTreeImpl<>();
+        BPlusTree<Integer, Integer> bTree = new BPlusTreeImpl<>();
         List<Integer> tempList = new ArrayList<>();
         int limit = 10_000;
         for (int i = 0; i < limit; i++) {
