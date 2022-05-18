@@ -12,6 +12,7 @@ public class Main {
         map.put(2, 2);
         map.put(3, 3);
         map.put(4, 4);
+        System.out.println(map);
         map.remove(4);
         System.out.println(map.contains(4));
         System.out.println(map);
