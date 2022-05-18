@@ -1,7 +1,7 @@
 import Entity.Recipient;
-import Map.Containers.Impls.LinkedList;
-import Map.Impls.MapImpl;
-import Map.Map;
+import Collections.Map.Containers.Impls.LinkedList;
+import Collections.Map.Impls.MapImpl;
+import Collections.Map.Map;
 
 
 public class Main {
@@ -16,7 +16,6 @@ public class Main {
         System.out.println(map.contains(4));
         System.out.println(map);
         map.put(4, 4);
-	System.out.println(map.contains(4));
         System.out.println(map);
     }
 }
